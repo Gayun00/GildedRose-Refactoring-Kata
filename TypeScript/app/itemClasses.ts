@@ -24,6 +24,7 @@ export class AgedBrie extends Item {
   }
 
   handleSellIn() {
+    if (this.sellIn <= 0) return;
     this.sellIn--;
   }
 }
@@ -43,6 +44,7 @@ export class Passes extends Item {
 
     if (6 <= this.sellIn && this.sellIn < 11) {
       this.quality += 2;
+      return;
     }
 
     if (this.sellIn < 6) {
@@ -51,16 +53,38 @@ export class Passes extends Item {
   }
 
   handleSellIn() {
+    if (this.sellIn <= 0) return;
     this.sellIn--;
   }
 }
 
 export class Surfras extends Item {
   constructor(sellIn, quality) {
-    super("Sulfuras, Hand of Ragnaros", sellIn, quality);
+    const QUALITY = 80;
+    super("Sulfuras, Hand of Ragnaros", sellIn, QUALITY);
   }
 
   handleQuality() {}
 
   handleSellIn() {}
+}
+
+export class Conjured extends Item {
+  constructor(sellIn, quality) {
+    super("Conjured Mana Cake", sellIn, quality);
+  }
+
+  handleQuality() {
+    if (this.quality >= 50 || this.quality === 0) return;
+    if (this.sellIn === 0) {
+      this.quality = this.quality / 4;
+      return;
+    }
+    this.quality++;
+  }
+
+  handleSellIn() {
+    if (this.sellIn <= 0) return;
+    this.sellIn--;
+  }
 }

@@ -1,5 +1,5 @@
 import { GildedRose } from "@/gilded-rose";
-import { AgedBrie, Passes, Surfras } from "@/itemClasses";
+import { AgedBrie, Conjured, Passes, Surfras } from "@/itemClasses";
 
 describe("Aged Brie 테스트", () => {
   let gildedRose = new GildedRose([new AgedBrie(1, 0)]);
@@ -47,11 +47,18 @@ describe("Surfras 테스트", () => {
     gildedRose = new GildedRose([new Surfras(2, 3)]);
   });
 
+  it("Surfras의 quality는 항상 80", () => {
+    const items = gildedRose.updateQuality();
+
+    expect(items[0].sellIn).toBe(2);
+    expect(items[0].quality).toBe(80);
+  });
+
   it("Surfras의 quality는 변하지 않음, sellIn 변하지 않음", () => {
     const items = gildedRose.updateQuality();
 
     expect(items[0].sellIn).toBe(2);
-    expect(items[0].quality).toBe(3);
+    expect(items[0].quality).toBe(80);
   });
 });
 
@@ -91,6 +98,38 @@ describe("Backstage passes 테스트", () => {
 
     expect(items[0].sellIn).toBe(0);
     expect(items[0].quality).toBe(0);
+  });
+
+  it("quality는 50을 초과할 수 없음", () => {
+    const gildedRose = new GildedRose([new AgedBrie(2, 50)]);
+    const items = gildedRose.updateQuality();
+
+    expect(items[0].sellIn).toBe(1);
+    expect(items[0].quality).toBe(50);
+  });
+
+  it("quality는 음수가 될 수 없음", () => {
+    const gildedRose = new GildedRose([new Passes(1, 0)]);
+    const items = gildedRose.updateQuality();
+
+    expect(items[0].sellIn).toBe(0);
+    expect(items[0].quality).toBe(0);
+  });
+});
+
+describe("Conjured 테스트", () => {
+  let gildedRose = new GildedRose([new Conjured(1, 0)]);
+
+  beforeEach(() => {
+    gildedRose = new GildedRose([new Conjured(2, 3)]);
+  });
+
+  it("Conjured 아이템은 sellIn이 0일 때 quality가 4배로 감소", () => {
+    gildedRose = new GildedRose([new Conjured(1, 16)]);
+    const items = gildedRose.updateQuality();
+
+    expect(items[0].sellIn).toBe(0);
+    expect(items[0].quality).toBe(4);
   });
 
   it("quality는 50을 초과할 수 없음", () => {
