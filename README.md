@@ -1,5 +1,24 @@
 # Gilded Rose Refactoring Kata
 
+---
+
+리팩토링 학습을 위한 오픈소스 코드입니다.
+리팩토링 책을 읽고 학습한 내용을 적용하기 위해 사용하고 있습니다.
+관련 내용은 블로그 글에 작성하고 있습니다.
+
+블로그 글 링크: 
+- [리팩토링 읽고 적용해보기 - 클래스로 다형성 구현하기, 조건문 뎁스 줄이기](https://velog.io/@gygy/%EB%A6%AC%ED%8C%A9%ED%86%A0%EB%A7%81-%EB%8B%A4%ED%98%95%EC%84%B1-gilded-rose)
+
+
+<br>
+
+
+
+---
+
+<br>
+
+
 You can find out more about this exercise in my YouTube video [Why Developers LOVE The Gilded Rose Kata](https://youtu.be/Mt4XpGxigT4).
 
 I use this kata as part of my work as a technical coach. I wrote a lot about the coaching method I use in this book [Technical Agile Coaching with the Samman method](https://leanpub.com/techagilecoach). A while back I wrote this article ["Writing Good Tests for the Gilded Rose Kata"](http://coding-is-like-cooking.info/2013/03/writing-good-tests-for-the-gilded-rose-kata/) about how you could use this kata in a [coding dojo](https://leanpub.com/codingdojohandbook).
