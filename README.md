@@ -4,10 +4,23 @@
 
 리팩토링 학습을 위한 오픈소스 코드로, 리팩토링 책을 읽고 학습한 내용을 적용하기 위해 사용하고 있습니다.
 
+<br>
+<br>
+
+리팩토링 내용:
+- [X] 클래스를 사용해 조건부 로직을 다형성으로 변경
+- [X] if...else조건문 뎁스 제거
+- [X] 중복코드 삭제
+- [X] 인라인 함수 분리
+
+<br>
+<br>
+
 관련 내용은 블로그 글에 작성하고 있습니다.
 
 블로그 글 링크: 
 - [리팩토링 읽고 적용해보기 - 클래스로 다형성 구현하기, 조건문 뎁스 줄이기](https://velog.io/@gygy/%EB%A6%AC%ED%8C%A9%ED%86%A0%EB%A7%81-%EB%8B%A4%ED%98%95%EC%84%B1-gilded-rose)
+
 
 
 <br>
@@ -17,6 +30,10 @@
 ---
 
 <br>
+
+아래는 공개된 오픈소스 프로젝트 가이드라인입니다.
+
+<br><br><br><br><br><br><br><br><br><br><br>
 
 
 You can find out more about this exercise in my YouTube video [Why Developers LOVE The Gilded Rose Kata](https://youtu.be/Mt4XpGxigT4).
